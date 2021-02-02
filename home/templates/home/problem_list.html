@@ -1,4 +1,4 @@
-{% extends "home/base.html" %}
+{% extends 'home/base.html' %}
 {% load static %}
 
 {% block content %}
@@ -9,7 +9,7 @@
     <div style="float:right">
         <!-- https://www.w3schools.com/howto/howto_css_search_button.asp -->
         <form>
-          <input type="text" placeholder="Search.." name="search"
+          <input type="text" placeholder="Search..." name="search"
           {% if search %} value="{{ search }}" {% endif %}>
           <button type="submit"><i class="fa fa-search"></i></button>
         <a href="{% url 'home:index' %}"><i class="fa fa-undo"></i></a>
@@ -18,31 +18,48 @@
 
     <br><br>
 
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100">
 
-    <table>
-        <tr>
-            <th>Problem</th>
-            <th>Description</th>
-            <th>Technologies</th>
-            <th>Link</th>
-        </tr>
-    {% for problem in problem_list %}
-        
-    <tr>
-        <td>{{problem.name}}</td>
-        <td>{{problem.description}}</td>
-        <td>
-            {% for technology in problem.technologies.all %}
-            <li>{{technology.name}}</li>
-            {% endfor %}
-        </td>
-        <td><a href="{% url problem.identifier %}">See</a></td>
-    </tr>
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                        <th>Problem</th>
+                        <th>Description</th>
+                        <th>Technologies</th>
+                        <th>Link</th>
+                        </tr>
+                    </thead>
+                    
+                    {% for problem in problem_list %}
+                    
+                    <tr>
+                        <td>{{problem.name}}</td>
+                        <td>{{problem.description}}</td>
+                        <td>
+                            {% for technology in problem.technologies.all %}
+                            <li>{{technology.name}}</li>
+                            {% endfor %}
+                        </td>
+                        <td><a href="{% url problem.identifier %}">See</a></td>
+                    </tr>
+                
+                    {% endfor %}
+            
+                </table>
+            
 
-    {% endfor %}
+            </div>
 
-    </table>
+        </div>
 
+
+
+
+    </div>
+
+    
     </div>
 
 {% endblock content%}
