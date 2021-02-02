@@ -68,6 +68,7 @@ position: relative;
 }
 table td, table th {
 padding-left: 8px;
+padding-right: 8px;
 }
 table thead tr {
 height: 60px;
