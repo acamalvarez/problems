@@ -1,0 +1,35 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="main-wrapper">
+
+    <h1>Calculate pH</h1>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        Calculate the pH of a solution 
+        <input type="number" min="0" step="0.00000000000001" name="concentration" value={{concentration}}> M en 
+        <select id="compounds" name="compounds_list">
+            {% for compound in compounds %}
+            {% if compound.value == compound_value %}
+                <option value={{compound.value}} selected>{{compound.name}}</option>
+            {% else %}
+                <option value={{compound.value}}>{{compound.name}}</option>
+            {% endif %}
+            {% endfor %}
+
+        </select> at 25 &#176C.
+
+        <br><br>
+
+        <input type="submit" value="Calculate">
+
+    </form>
+
+    <p>The pH of the solution is <strong>{{pH}}</strong>.</p>
+
+</div>
+
+{% endblock content%}

@@ -1,0 +1,35 @@
+id,Name,Formula,Type,k,Value
+0,Acetic acid,CH3CO2H,weak acid,1.75E-05,Acetic_acid
+1,Ammonia,NH3,weak base,1.80E-05,Ammonia
+2,Aniline,C6H5NH2,weak base,7.40E-10,Aniline
+3,Benzoic acid,C6H5CO2H,weak acid,6.25E-05,Benzoic_acid
+4,Bromoacetic acid,CH2BrCO2H,weak acid,1.30E-03,Bromoacetic_acid
+5,Chloroacetic acid,CH2ClO2H,weak acid,1.30E-03,Chloroacetic_acid
+6,Chlorhydric acid,HCl,strong acid,0,Chlorhydric_acid
+7,Chlorous acid,HClO2,weak acid,1.10E-02,Chlorous_acid
+8,Cyanic acid,HCNO,weak acid,3.50E-04,Cyanic_acid
+9,Dichloroacetic acid,CHCl2CO2H,weak acid,4.50E-02,Dichloroacetic_acid
+10,Dimethylamine,(CH3)2NH,weak base,5.40E-04,Dimethylamine
+11,Ethylamine,C2H5NH2,weak base,4.50E-04,Ethylamine
+12,Fluoroacetic acid,CH2FCO2H,weak acid,2.60E-03,Fluoroacetic_acid
+13,Formic acid,CH2O2,weak acid,1.80E-04,Formic_acid
+14,Hydrazine,N2H4,weak base,1.30E-06,Hydrazine
+15,Hydrazoic acid,HN3,weak acid,2.50E-05,Hydrazoic_acid
+16,Hydrocyanic acid,HCNO,weak acid,6.20E-10,Hydrocyanic_acid
+17,Hydrofluoric acid,HF,weak acid,6.30E-04,Hydrofluoric_acid
+18,Hypochlorous acid,HClO2,weak acid,4.00E-08,Hypochlorous_acid
+19,Hypoiodous acid,HIO,weak acid,3.20E-11,Hypoiodous_acid
+20,Iodic acid,HIO3,weak acid,1.70E-01,Iodic_acid
+21,Iodoacetic acid,CH2ICO2H,weak acid,6.60E-04,Iodoacetic acid
+22,Nitric acid,HNO3,strong acid,0,Nitric_acid
+23,Nitrous acid,HNO2,weak acid,5.60E-04,Nitrous_acid
+24,Periodic acid,HIO4,weak acid,2.30E-02,Periodic_acid
+25,Phenol,C6H5OH,weak acid,1.00E-10,Phenol
+26,Propylamine,C3H7NH2,weak base,3.50E-04,Propylamine
+27,Pyridine,C5H5N,weak base,1.70E-09,Pyridine
+28,Selenic acid,H2SeO4,strong acid,0,Selenic_acid
+29,Sodium hydroxyde,NaOH,strong base,0,Sodium_hydroxyde
+30,Sulfuric acid,H2SO4,strong acid,0,Sulfuric_acid
+31,Trichloroacetic acid,CCl3CO2H,weak acid,2.20E-01,Trichloroacetic_acid
+32,Trifluoroacetic acid,CF3CO2H,weak acid,3.00E-01,Trifluoroacetic_acid
+33,Trimethylamine,(CH3)3N,weak base,6.30E-05,Trimethylamine

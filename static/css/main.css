@@ -1,0 +1,61 @@
+body {
+    font-family: verdana;
+}
+
+form {
+    justify-self: center;
+    align-self: center;
+}
+
+.main-wrapper {
+    margin: auto;
+    width: 60%;    
+}
+
+.problem-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-self: left;
+    grid-area: problem-wrapper;
+}
+
+.solution-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-content: center;
+}
+
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+.input_value {
+    width: 50px;
+}
+
+.paint-values {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+table, th, td {
+    border: 1px solid black;
+  }
+
+
+@media screen and (max-width: 800px) {
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .solution-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .problem-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
