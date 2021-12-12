@@ -6,17 +6,8 @@ from .utils import calculate_pH
 
 def home(request):
     compounds = Compound.objects.all()
-
-    try:
-        if request.method == 'POST':
-            concentration = float(request.POST.get('concentration'))
-            compound_value = request.POST.get('compounds_list')
-        else:
-            concentration = 0.1
-            compound_value = 'Acetic_acid'
-
-    except Exception as e:
-        print('ERROR', e)
+    concentration = float(request.POST.get('concentration', 0.1))
+    compound_value = request.POST.get('compounds_list', 'Acetic_acid')
 
     pH = calculate_pH(compound_value, concentration)
 
