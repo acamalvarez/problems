@@ -2,6 +2,7 @@ import csv
 
 from home.models import Problem, Tag, Technology
 
+
 def run():
 
     fhand = open('static/home/problems.csv')
@@ -34,13 +35,13 @@ def run():
         technology, created = Technology.objects.get_or_create(name=row[5])
 
         problem, created = Problem.objects.get_or_create(
-            id=id, 
-            name=name, 
+            id=id,
+            name=name,
             topic=topic,
             description=description,
             identifier=identifier,
-            )
-        
+        )
+
         problem.tags.add(tag)
         problem.technologies.add(technology)
 

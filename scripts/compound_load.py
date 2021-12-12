@@ -2,6 +2,7 @@ import csv
 
 from pHCalculation.models import Compound
 
+
 def run():
 
     fhand = open('static/pHCalculation/data.csv')
@@ -27,11 +28,11 @@ def run():
             value = None
 
         compound, created = Compound.objects.get_or_create(
-            id=id, 
-            name=name, 
+            id=id,
+            name=name,
             formula=formula,
             compound_type=compound_type,
-            k = k,
+            k=k,
             value=value,)
 
         compound.save()

@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from .utils import solve_lin_prog
 
+
 def home(request):
 
     costPaintA = 1120.0
@@ -38,7 +39,7 @@ def home(request):
             request.POST['solventA'] and
             request.POST['solventB'] and
             request.POST['solventC'] and
-            request.POST['solventConstraint']):
+                request.POST['solventConstraint']):
 
             costPaintA = float(request.POST['costPaintA'])
             costPaintB = float(request.POST['costPaintB'])
@@ -63,10 +64,10 @@ def home(request):
         print('ERROR', e)
 
     solution = solve_lin_prog([costPaintA, costPaintB, costPaintC],
-        [[-pigmentA, -pigmentB, -pigmentC], 
-        [-binderA, -binderB, -binderC], 
-        [-solventA, -solventB, -solventC]],
-        [-pigmentConstraint, -binderConstraint, -solventConstraint]).x
+                              [[-pigmentA, -pigmentB, -pigmentC],
+                               [-binderA, -binderB, -binderC],
+                               [-solventA, -solventB, -solventC]],
+                              [-pigmentConstraint, -binderConstraint, -solventConstraint]).x
 
     paintA = round(solution[0], 1)
     paintB = round(solution[1], 1)

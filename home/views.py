@@ -5,6 +5,7 @@ from django.db.models import Q
 
 from home.models import Problem
 
+
 class ProblemsListView(ListView):
     model = Problem
     template_name = 'home/problem_list.html'
@@ -29,9 +30,6 @@ class ProblemsListView(ListView):
         ctx = {'problem_list': objects, 'search': strval}
 
         return render(request, self.template_name, ctx)
-
-
-
 
 # class HomeView(TemplateView):
 #     template_name = "home/index.html"

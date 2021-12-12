@@ -9,10 +9,9 @@
     <div style="float:right">
         <!-- https://www.w3schools.com/howto/howto_css_search_button.asp -->
         <form>
-          <input type="text" placeholder="Search..." name="search"
-          {% if search %} value="{{ search }}" {% endif %}>
-          <button type="submit"><i class="fa fa-search"></i></button>
-        <a href="{% url 'home:index' %}"><i class="fa fa-undo"></i></a>
+            <input type="text" placeholder="Search..." name="search" {% if search %} value="{{ search }}" {% endif %}>
+            <button type="submit"><i class="fa fa-search"></i></button>
+            <a href="{% url 'home:index' %}"><i class="fa fa-undo"></i></a>
         </form>
     </div>
 
@@ -21,19 +20,16 @@
     <div class="container-table100">
         <div class="wrap-table100">
             <div class="table100">
-
                 <table>
                     <thead>
                         <tr class="table100-head">
-                        <th>Problem</th>
-                        <th>Description</th>
-                        <th>Technologies</th>
-                        <th>Link</th>
+                            <th>Problem</th>
+                            <th>Description</th>
+                            <th>Technologies</th>
+                            <th>Link</th>
                         </tr>
                     </thead>
-                    
                     {% for problem in problem_list %}
-                    
                     <tr>
                         <td>{{problem.name}}</td>
                         <td>{{problem.description}}</td>
@@ -44,22 +40,11 @@
                         </td>
                         <td><a href="{% url problem.identifier %}">See</a></td>
                     </tr>
-                
                     {% endfor %}
-            
                 </table>
-            
-
             </div>
-
         </div>
-
-
-
-
     </div>
-
-    
-    </div>
+</div>
 
 {% endblock content%}

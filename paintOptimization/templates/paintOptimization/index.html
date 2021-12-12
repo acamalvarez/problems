@@ -3,23 +3,22 @@
 
 {% block content %}
 
-
 <div class="main-wrapper">
 
-    <h2>Liner programming problem</h2>
+    <h2>Linear Programming Problem</h2>
 
     <h4>Minimize costs</h4>
     <form method="POST" action="">
         {% csrf_token %}
-        
+
         <p>
             A chemical company produces three paints with the following costs:<br>
             Paint-A: $<input type="number" min="0" name="costPaintA" value={{costPaintA}}></input>,<br>
             Paint-B: $<input type="number" min="0" name="costPaintB" value={{costPaintB}}></input>, and<br>
             Paint-C: $<input type="number" min="0" name="costPaintC" value={{costPaintC}}></input>.<br><br>
-            To produce Paint-A, it is needed 72 tons of pigment, 5 tons of binder, and 50 tons of solvent. 
-            Paint-B requires 28 tons of pigment, 35 tons of binder, and 30 tons of solvent. 
-            Paint-C requires 25 tons of pigment, 45 tons of binder, and 35 tons of solvent. 
+            To produce Paint-A, it is needed 72 tons of pigment, 5 tons of binder, and 50 tons of solvent.
+            Paint-B requires 28 tons of pigment, 35 tons of binder, and 30 tons of solvent.
+            Paint-C requires 25 tons of pigment, 45 tons of binder, and 35 tons of solvent.
             The company inventory has at least 1700 tons of pigment, 1500 tons of binder, and 1100 tons of solvent.
             What is the quantity to produce of each paint to minimize production cost?
         </p>
@@ -67,13 +66,6 @@
 
     <a href="/" style="display: float-right;">Back to list</a>
 
-
 </div>
-
-
-
-
-
-
 
 {% endblock content%}

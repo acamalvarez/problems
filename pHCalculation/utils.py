@@ -37,7 +37,7 @@ class pH:
         return round(float(pH), 2)
 
 
-def calculatepH(compound_value, concentration):
+def calculate_pH(compound_value, concentration):
 
     data = pd.read_csv('static/pHCalculation/data.csv', index_col='id')
 

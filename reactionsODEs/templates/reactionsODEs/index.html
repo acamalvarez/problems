@@ -4,68 +4,65 @@
 {% block content %}
 
 <div class="main-wrapper">
+    <h2>ODEs problem</h2>
+    <p>
+        The following gas-phase reactions take place simultaneously
+        on a metal oxide-supported catalyst:
+    </p>
 
-        <h2>ODEs problem</h2>
-        <p>
-            The following gas-phase reactions take place simultaneously 
-            on a metal oxide-supported catalyst:
-        </p>
+    <div class="problem-wrapper">
 
-        <div class="problem-wrapper">
+        <div class="reactions">
 
-            <div class="reactions">
-
-                <p>4A + 5B &#8594 4C + 6D; -r<sub>1A</sub> = k<sub>1A</sub>C<sub>A</sub>C<sub>B</sub><sup>2</sup></p>
-                <p>2A + 1.5B &#8594 E + 3D; -r<sub>2A</sub> = k<sub>2A</sub>C<sub>A</sub>C<sub>B</sub></p>
-                <p>2C + B &#8594 2F; -r<sub>3B</sub> = k<sub>3B</sub>C<sub>C</sub><sup>2</sup>C<sub>B</sub></p>
-                <p>4A + 6C &#8594 5E + 6D; -r<sub>4C</sub> = k<sub>4C</sub>C<sub>C</sub>C<sub>A</sub><sup>2/3</sup></p>
-
-            </div>
-            
-            <div clsss="constants"> 
-
-                <p>k<sub>1A</sub> = 5.0(m<sup>3</sup>/kmol)<sup>2</sup>/min</p>
-                <p>k<sub>2A</sub> = 2.0m<sup>3</sup>/kmol &#8231 min</p>
-                <p>k<sub>3B</sub> = 10.0(m<sup>3</sup>/kmol)<sup>2</sup>/min</p>
-                <p>k<sub>4C</sub> = 5.0(m<sup>3</sup>/kmol)<sup>2/3</sup>/min</p>
-
-            </div>
-               
-        </div>
-
-        <p>Determine the concentrations as a function of volume in a
-             PFR Feed rate = 10 dm<sup>3</sup>/min;
-            volume of reactor = 10 dm<sup>3</sup>; 
-            C<sub>A0</sub> = C<sub>B0</sub> = 1.0 mol/dm<sup>3</sup>, 
-            C<sub>T0</sub> = 2.0 mol/dm<sup>3</sup></p>
-
-        <h3>Solution</h3>
-
-        <div class="solution-wrapper">
-            <form method="POST" action="">
-                {% csrf_token %}
-
-                <p>C<sub>A0</sub> <input class="input_value" type="number" name="CA0" value={{CA0}}></input></p>
-                <p>C<sub>B0</sub> <input class="input_value" type="number" name="CB0" value={{CB0}}></input></p>
-                <br>
-                <p>k<sub>1A</sub> <input class="input_value" type="number" name="k1A" value={{k1A}}></input></p>
-                <p>k<sub>2A</sub> <input class="input_value" type="number" name="k2A" value={{k2A}}></input></p>
-                <p>k<sub>3B</sub> <input class="input_value" type="number" name="k3B" value={{k3B}}></input></p>
-                <p>k<sub>4C</sub> <input class="input_value" type="number" name="k4C" value={{k4C}}></input></p>
-
-                <p>C<sub>T0</sub> <input class="input_value" type="number" name="CT0" value={{CT0}} readonly></input></p>
-                
-                <p><input type="submit" value="Update"></input></p>
-            </form>
-
-            <img class="image" src="data:image/png;base64, {{ graph | safe}}">
+            <p>4A + 5B &#8594 4C + 6D; -r<sub>1A</sub> = k<sub>1A</sub>C<sub>A</sub>C<sub>B</sub><sup>2</sup></p>
+            <p>2A + 1.5B &#8594 E + 3D; -r<sub>2A</sub> = k<sub>2A</sub>C<sub>A</sub>C<sub>B</sub></p>
+            <p>2C + B &#8594 2F; -r<sub>3B</sub> = k<sub>3B</sub>C<sub>C</sub><sup>2</sup>C<sub>B</sub></p>
+            <p>4A + 6C &#8594 5E + 6D; -r<sub>4C</sub> = k<sub>4C</sub>C<sub>C</sub>C<sub>A</sub><sup>2/3</sup></p>
 
         </div>
-            <a href="/" style="display: float-right;">Back to list</a>
-        </div> 
-        
+
+        <div clsss="constants">
+
+            <p>k<sub>1A</sub> = 5.0(m<sup>3</sup>/kmol)<sup>2</sup>/min</p>
+            <p>k<sub>2A</sub> = 2.0m<sup>3</sup>/kmol &#8231 min</p>
+            <p>k<sub>3B</sub> = 10.0(m<sup>3</sup>/kmol)<sup>2</sup>/min</p>
+            <p>k<sub>4C</sub> = 5.0(m<sup>3</sup>/kmol)<sup>2/3</sup>/min</p>
+
+        </div>
+
     </div>
 
-    
+    <p>Determine the concentrations as a function of volume in a
+        PFR Feed rate = 10 dm<sup>3</sup>/min;
+        volume of reactor = 10 dm<sup>3</sup>;
+        C<sub>A0</sub> = C<sub>B0</sub> = 1.0 mol/dm<sup>3</sup>,
+        C<sub>T0</sub> = 2.0 mol/dm<sup>3</sup></p>
 
-    {% endblock content%}
+    <h3>Solution</h3>
+
+    <div class="solution-wrapper">
+        <form method="POST" action="">
+            {% csrf_token %}
+
+            <p>C<sub>A0</sub> <input class="input_value" type="number" name="CA0" value={{CA0}}></input></p>
+            <p>C<sub>B0</sub> <input class="input_value" type="number" name="CB0" value={{CB0}}></input></p>
+            <br>
+            <p>k<sub>1A</sub> <input class="input_value" type="number" name="k1A" value={{k1A}}></input></p>
+            <p>k<sub>2A</sub> <input class="input_value" type="number" name="k2A" value={{k2A}}></input></p>
+            <p>k<sub>3B</sub> <input class="input_value" type="number" name="k3B" value={{k3B}}></input></p>
+            <p>k<sub>4C</sub> <input class="input_value" type="number" name="k4C" value={{k4C}}></input></p>
+
+            <p>C<sub>T0</sub> <input class="input_value" type="number" name="CT0" value={{CT0}} readonly></input></p>
+
+            <p><input type="submit" value="Update"></input></p>
+        </form>
+
+        <img class="image" src="data:image/png;base64, {{ graph | safe}}">
+
+    </div>
+    <a href="/" style="display: float-right;">Back to list</a>
+</div>
+
+</div>
+
+{% endblock content%}

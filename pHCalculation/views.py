@@ -1,12 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
-from .utils import calculatepH
 
 from .models import Compound
+from .utils import calculate_pH
+
 
 def home(request):
-
     compounds = Compound.objects.all()
 
     try:
@@ -16,14 +14,14 @@ def home(request):
         else:
             concentration = 0.1
             compound_value = 'Acetic_acid'
-    
+
     except Exception as e:
         print('ERROR', e)
 
-    pH = calculatepH(compound_value, concentration)
+    pH = calculate_pH(compound_value, concentration)
 
     context = {
-        'concentration':concentration,
+        'concentration': concentration,
         'compounds': compounds,
         'pH': pH,
         'compound_value': compound_value,
