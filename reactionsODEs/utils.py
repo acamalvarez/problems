@@ -1,13 +1,10 @@
+import base64
+from io import BytesIO
+
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.integrate import odeint
 
-from matplotlib.backends.backend_agg import FigureCanvasAgg
-from matplotlib.backends.backend_agg import FigureManagerBase
-# import matplotlib.backends.backend_agg
-
-from io import BytesIO
-import base64
 
 def get_image():
     # create a bytes buffer for the image to save
@@ -27,11 +24,12 @@ def get_image():
 
     return graph
 
+
 def solve_problem(k1A, k2A, k3B, k4C, CA0, CB0):
 
     C0 = [CA0, CB0, 0., 0., 0., 0.]
     Vspan = np.linspace(0, 10, 51)
-    C = odeint(equations, C0, Vspan, args = (k1A, k2A, k3B, k4C))
+    C = odeint(equations, C0, Vspan, args=(k1A, k2A, k3B, k4C))
 
     plt.switch_backend('AGG')
     fig = plt.figure()
@@ -40,13 +38,14 @@ def solve_problem(k1A, k2A, k3B, k4C, CA0, CB0):
     ax.plot(Vspan, C)
     ax.set_xlabel(r'Volume / dm$^3$')
     ax.set_ylabel(r'Concentration / mol / dm$^3$')
-    plt.legend('ABCDEF', loc = 'best')
-    
+    plt.legend('ABCDEF', loc='best')
+
     plt.tight_layout()
 
     graph = get_image()
 
     return graph
+
 
 def equations(C, V, k1A, k2A, k3B, k4C):
 
@@ -58,13 +57,14 @@ def equations(C, V, k1A, k2A, k3B, k4C):
     r2A = -k2A * cA * cB
     r3B = -k3B * cC**2 * cB
     r4C = -k4C * cC * cA**(2/3)
-    
-    C = [r1A + r2A + (2/3) * r4C,
+
+    C = (
+        r1A + r2A + (2/3) * r4C,
         1.25 * r1A + 0.75 * r2A + r3B,
         -r1A + 2 * r3B + r4C,
         -1.5 * r1A - 1.5 * r2A - r4C,
         -0.5 * r2A - (5/6) * r4C,
-        -2 * r3B]
+        -2 * r3B,
+    )
 
     return C
-
