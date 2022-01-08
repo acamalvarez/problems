@@ -1,4 +1,4 @@
-from django.db.models import CASCADE, CharField, FloatField, Model
+from django.db.models import CharField, FloatField, Model
 
 
 class Compound(Model):
