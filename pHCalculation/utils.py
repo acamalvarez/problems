@@ -38,7 +38,6 @@ def calculate_pH(compound_value, concentration):
     elif compound_type == "weak base":
         return pH(concentration).weak_base(k)
     elif compound_type == "strong acid":
-        print(pH(concentration).strong_acid())
         return pH(concentration).strong_acid()
     elif compound_type == "strong base":
         return pH(concentration).strong_base()

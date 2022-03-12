@@ -8,5 +8,8 @@ class Compound(Model):
     k = FloatField(null=True)
     value = CharField(max_length=20, null=True)
 
+    class Meta:
+        ordering = ["name"]
+
     def __str__(self):
         return self.name
